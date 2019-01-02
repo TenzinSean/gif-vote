@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GifService } from '@app/core/services/gif.service';
+
 
 @Component({
   selector: 'app-create',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  randomGif;
+
+  constructor(private gifservice: GifService ) { }
 
   ngOnInit() {
-  }
-
+    this.gifservice.getRandom()
+      .subscribe(gif => this.randomGif = gif);
+    };
 }

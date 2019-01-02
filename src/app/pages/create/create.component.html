@@ -1,3 +1,18 @@
-<p>
-  create works!
-</p>
+  <h1 class="title has-centered">Create a gif</h1>
+  <div class="box">
+    <div class="gif-container">
+      <!-- image -->
+      <img [src]="randomGif.url" alt=""/>
+      <!-- caption -->
+      <div class="caption">{{ caption }}</div>
+    </div>
+
+    <!-- create a caption -->
+    <div class="field">
+      <input type="text" class="input"/>
+    </div>
+      <!-- createbutton -->
+      <a href="" class="button is-success" (click)="saveGif()">
+          Create
+      </a>
+  </div>
